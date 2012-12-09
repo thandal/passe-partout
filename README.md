@@ -1,6 +1,6 @@
 Passe-Partout
-Nathaniel Fairfield [than@timbrel.org]
 =============
+Nathaniel Fairfield [than@timbrel.org]
 
 There are lots of games out there, but you can’t share stuff between them. It would be really cool to be able to use the same toon, with the same characteristics, capabilities, and property, in multiple virtual worlds.
 
@@ -20,33 +20,34 @@ The key mechanisms underlying Passe-Partour are crytographic signatures to verif
 
 Further details are provided below, after quick start instructions.
 
-============
+
 TODO
-============
+====
 * Run on the real bitcoin network (just tested on testnets so far)
 * Create an example server.
 
-============
+
 QUICK START
-============
+===========
 Install bitcoin, sync to the block chain (may take a long time).  Alternatively, set up a test net.
 Install pyme
 Install hkp
 Install Crypto
 
 Create a server key:
- python
- >>> import pp_keys
- >>> my_server_key = pp_keys.GenerateServerKey('MyServerName')
- >>> my_exported_key = pp_keys.ExportPubKey(my_server_key)
- >>> pp_keys.UploadKey(my_exported_key)
+    python
+    >>> import pp_keys
+    >>> my_server_key = pp_keys.GenerateServerKey('MyServerName')
+    >>> my_exported_key = pp_keys.ExportPubKey(my_server_key)
+    >>> pp_keys.UploadKey(my_exported_key)
+ 
 
 
-============
 DETAILS
-============
+=======
 
 TRANSFERRABLE BUT NOT COPYABLE ITEMS
+------------------------------------
 
 How are digital items handled?  In the simplest case, server1 gives an item to player1 by entering it into server1's internal record of player1's inventory.
 
@@ -83,5 +84,6 @@ When player2 declares itemE, the destination server will have to verify the tran
 
 
 WEBS OF TRUST
+-------------
 
 People who run servers can establish webs of trust using the standard public key signature methods used by gnupg.
