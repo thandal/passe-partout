@@ -25,21 +25,26 @@ TODO
 ====
 * Run on the real bitcoin network (just tested on testnets so far)
 * Create an example server.
+* Immigration support
 
 
 QUICK START
 ===========
-Install bitcoin, sync to the block chain (may take a long time).  Alternatively, set up a test net.
-Install pyme
-Install hkp
-Install Crypto
+* Install bitcoin, sync to the block chain (may take a long time).  Alternatively, set up a test net.
+ * Fund your bitcoin wallet (0.1 bitcoins or less is plenty).
+* Install pyme
+* Install hkp
+* Install Crypto
+* Create a server key, and then upload it to the keyservers:
 
-Create a server key:
-    python
-    >>> import pp_keys
-    >>> my_server_key = pp_keys.GenerateServerKey('MyServerName')
-    >>> my_exported_key = pp_keys.ExportPubKey(my_server_key)
-    >>> pp_keys.UploadKey(my_exported_key)
+        $ python
+        >>> import pp_keys
+        >>> my_server_key = pp_keys.GenerateServerKey('MyServerName')
+        >>> my_exported_key = pp_keys.ExportPubKey(my_server_key)
+        >>> pp_keys.UploadKey(my_exported_key)
+        
+* Play around with some of the tests.
+* Write a game that uses the server to grant items to players.
  
 
 
