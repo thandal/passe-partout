@@ -23,13 +23,14 @@ Further details are provided below, after quick start instructions.
 
 TODO
 ====
-* Run on the real bitcoin network (just tested on testnets so far)
-* Create an example server.
-* Immigration support
+* More interesting demos.
 
 
 QUICK START
 ===========
+Look at the instructions in demo/quizler_bar/quizler_bar_client.py.  [TODO set up a quizler_bar server somewhere for people to play with.]
+
+Getting started with a server.  A server is more complicated because it requires the complete bitcoin blockchain.  Briefly, the steps are:
 * Install bitcoin, sync to the block chain (may take a long time).  Alternatively, set up a test net.
  * Fund your bitcoin wallet (0.1 bitcoins or less is plenty).
 * Install pyme
@@ -44,8 +45,6 @@ QUICK START
         >>> pp_keys.UploadKey(my_exported_key)
         
 * Play around with some of the tests.
-* Write a game that uses the server to grant items to players.
- 
 
 
 DETAILS
