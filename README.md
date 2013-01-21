@@ -28,7 +28,7 @@ TODO
 
 QUICK START
 ===========
-Look at the instructions in demo/quizler_bar/quizler_bar_client.py.  [TODO set up a quizler_bar server somewhere for people to play with.]
+There is a demo quizler_bar server set up at shen.timbrel.org, which you can connect by specifying "server_url = https://shen.timbrel.org:8000/" in your .pp_game.cfg (see demo/quizler_bar/quizler_bar_client.py for details).
 
 Getting started with a server.  A server is more complicated because it requires the complete bitcoin blockchain.  Briefly, the steps are:
 * Install bitcoin, sync to the block chain (may take a long time).  Alternatively, set up a test net.
