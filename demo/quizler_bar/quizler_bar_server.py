@@ -8,15 +8,18 @@
 #  sudo pip install python-hkp
 # 2. Create your gpg keys (specified as your server_key below).
 #  gpg --gen-key
-#  [follow the prompts]
+#  [follow the prompts with Name-Real = 'Your Server Name']
+#  or
+#  Use pp_keys.GenerateServerKey('Your Server Name')
 # 3. Create your ssl certs
 #   openssl genrsa -out key.pem 1024
 #   openssl req -new -key key.pem -out request.pem
 #   openssl x509 -req -days 30 -in request.pem -signkey key.pem -out cert.pem
 # 4. Set up your config file ~/.pp_game_server.cfg
 #   [quizler_bar]
-#   server_key = Passe-Partout Shen
-#   btc_rpc_url = http://rpcusername:35lk2j34lksdijt@localhost:8332
+#   server_key = Your Server Key Name
+#   server_address = your.server.com
+#   btc_rpc_url = http://rpcusername:rpcpassword@localhost:8332
 
 import ConfigParser
 import cPickle
@@ -228,7 +231,8 @@ if __name__ == '__main__':
   if 0:  # insecure
     server = SimpleXMLRPCServer.SimpleXMLRPCServer(("localhost", 8000))
   if 1:  # secure
-    server = SecureXMLRPCServer.SecureXMLRPCServer(("localhost", 8000))
+    server = SecureXMLRPCServer.SecureXMLRPCServer(
+        (config.get('quizler_bar', 'server_address'), 8000))
   server.register_instance(xml_rpc_server)
 
   sa = server.socket.getsockname()
