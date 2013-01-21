@@ -30,12 +30,11 @@ QUICK START
 ===========
 There is a demo quizler_bar server set up at shen.timbrel.org, which you can connect by specifying "server_url = https://shen.timbrel.org:8000/" in your .pp_game.cfg (see demo/quizler_bar/quizler_bar_client.py for details).
 
-Getting started with a server.  A server is more complicated because it requires the complete bitcoin blockchain.  Briefly, the steps are:
+A server is more complicated because it requires the complete bitcoin blockchain: see the instructions at the top of demo/quizler_bar/quizler_bar_server.py for instructions.  Briefly, the steps are:
+
+Some other notes:
 * Install bitcoin, sync to the block chain (may take a long time).  Alternatively, set up a test net.
- * Fund your bitcoin wallet (0.1 bitcoins or less is plenty).
-* Install pyme
-* Install hkp
-* Install Crypto
+* Fund your bitcoin wallet (0.1 bitcoins is plenty).
 * Create a server key, and then upload it to the keyservers:
 
         $ python
@@ -43,8 +42,6 @@ Getting started with a server.  A server is more complicated because it requires
         >>> my_server_key = pp_keys.GenerateServerKey('MyServerName')
         >>> my_exported_key = pp_keys.ExportPubKey(my_server_key)
         >>> pp_keys.UploadKey(my_exported_key)
-        
-* Play around with some of the tests.
 
 
 DETAILS
