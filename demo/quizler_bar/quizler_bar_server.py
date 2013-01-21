@@ -3,7 +3,17 @@
 # NOTE: running a server is considerably complex.
 
 # GETTING STARTED
-# Set up your config file ~/.pp_game_server.cfg
+# 1. Install dependencies:
+#  sudo apt-get install python-pyme python-crypto python-openssl
+#  sudo pip install python-hkp
+# 2. Create your gpg keys (specified as your server_key below).
+#  gpg --gen-key
+#  [follow the prompts]
+# 3. Create your ssl certs
+#   openssl genrsa -out key.pem 1024
+#   openssl req -new -key key.pem -out request.pem
+#   openssl x509 -req -days 30 -in request.pem -signkey key.pem -out cert.pem
+# 4. Set up your config file ~/.pp_game_server.cfg
 #   [quizler_bar]
 #   server_key = Passe-Partout Shen
 #   btc_rpc_url = http://rpcusername:35lk2j34lksdijt@localhost:8332

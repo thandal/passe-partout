@@ -40,6 +40,7 @@ class ItemServer():
     logging.info('Loading block chain from' + BLOCK_DIRECTORY)
     self.lineage.UpdateDir(BLOCK_DIRECTORY)
     # Save the updated lineage (only at __init__).
+    logging.info('Saving updated lineage...')
     cPickle.dump(self.lineage, file(lineage_filename, 'w'), -1)
 
   def CreateAccount(self, password):
