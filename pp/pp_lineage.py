@@ -60,6 +60,8 @@ class Lineage:
         # Short circuit for genesis blocks
         if first_prevout_hash == GENESIS_HEX:
           continue
+        if len(tx['txIn']) > 2 or len(tx['txOut']) > 2:
+          continue
         tx_hash = BHash(tx['tx'])
         for txOut in tx['txOut']:
           if txOut.has_key('address'):
