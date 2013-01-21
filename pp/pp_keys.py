@@ -18,7 +18,7 @@ def Sign(content, key_name):
     if sigkey.can_sign:
       c.signers_add(sigkey)
   if not c.signers_enum(0):
-    raise ('No signing keys found for key name:', key_name)
+    raise Exception('No signing keys found for key name:', key_name)
   c.op_sign(con, sig, pyme.constants.SIG_MODE_DETACH)
   sig.seek(0,0)
   return sig.read()
@@ -93,7 +93,11 @@ def VerifyKey(key_name):
   if len(keys) != 1:
     return False
   key = keys[0]
+  if key.can_sign:
+    # We own the private key, so its verified by definition.
+    return True
   # Check that the key that was signed by the Passe-Partout Root Key.
+  # TODO: instead check that this server's key has signed the key.
   for uid in key.uids:
     for sig in uid.signatures:
       if sig.uid == 'Passe-Partout (Root Key)':
@@ -142,10 +146,16 @@ def ImportRootKey():
 
 if __name__ == '__main__':
   ImportRootKey()
-  if 0:
+  if 1:
+    key_name = 'Passe-Partout Shen'
+    print 'FindAndImport key:', key_name, FindAndImportKey(key_name)
+    print 'FindAndImportVerified key:', key_name,
+    print FindAndImportVerifiedKey(key_name)
+  if 1:
     key_name = 'Passe-Partout Shen'
     content = 'Monkeyshine'
     signature = Sign(content, key_name)
+    #print 'Signature:', signature
     print 'Verified content:', Verify(content, signature)
   if 1:
     key_name = 'Passe-Partout Shen'
