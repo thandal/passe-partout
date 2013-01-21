@@ -34,7 +34,7 @@ sys.path.append('../../pp')
 from pp_item_server import ItemServer
 import SecureXMLRPCServer
 
-QUIZLER_INTERVAL = 10
+QUIZLER_INTERVAL = 100
 QUESTIONS = {'How many buns make five?' : 'four',
              'How many quarts in a gallon?' : 'four',
              'Twice two?' : 'four',
