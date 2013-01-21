@@ -62,6 +62,12 @@ class Lineage:
           continue
         if len(tx['txIn']) > 2 or len(tx['txOut']) > 2:
           continue
+        dice = False
+        for txOut in tx['txOut']:
+          if txOut.has_key('address') and txOut['address'].startswith('1dice'):
+            dice = True
+            break
+        if dice: continue
         tx_hash = BHash(tx['tx'])
         for txOut in tx['txOut']:
           if txOut.has_key('address'):
