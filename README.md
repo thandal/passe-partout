@@ -1,7 +1,5 @@
 Passe-Partout
 =============
-Nathaniel Fairfield [than@timbrel.org]
-
 There are lots of games out there, but you can’t share stuff between them. It would be really cool to be able to use the same toon, with the same characteristics, capabilities, and property, in multiple virtual worlds.
 
 In addition to some pretty graphics and a painless way to transition from one domain to another, there is the more fundamental issue of exactly how your toon, and its possessions, are transferred from one domain to another. Normally, a virtual world is controlled by a single company, which has a central strategy for ensuring that the game is balanced and fun. One problem with transporting stuff between worlds is that a poorly (or maliciously) run domain could grant its visitors ridiculous powers or items.
